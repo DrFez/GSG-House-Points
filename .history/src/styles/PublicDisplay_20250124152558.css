@@ -1,0 +1,58 @@
+.position-badge {
+  position: absolute;
+  top: -15px;
+  right: 10px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+  transform: rotate(5deg);
+}
+
+.first-place {
+  position: relative;
+  animation: glow 2s ease-in-out infinite;
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+  }
+}
+
+.house-card {
+  position: relative;
+}
+
+/* Specific styles for each position */
+.house-card:nth-child(1) .position-badge {
+  background: linear-gradient(45deg, #FFD700, #FFA500);
+  color: #000;
+  border: 2px solid #FFD700;
+  transform: rotate(-5deg) scale(1.2);
+}
+
+.house-card:nth-child(2) .position-badge {
+  background: linear-gradient(45deg, #C0C0C0, #E8E8E8);
+  color: #000;
+  border: 2px solid #C0C0C0;
+}
+
+.house-card:nth-child(3) .position-badge {
+  background: linear-gradient(45deg, #CD7F32, #B87333);
+  color: white;
+  border: 2px solid #CD7F32;
+}
+
+.house-card:nth-child(4) .position-badge {
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: 2px solid #555;
+}

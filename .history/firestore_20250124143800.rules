@@ -1,0 +1,17 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Only authenticated users can read points
+    match /points/{document} {
+      allow read: true;  // Anyone can read points
+      allow write: request.auth != null;  // Only authenticated users can write
+    }
+    
+    // Track point history
+    match /pointHistory/{document} {
+      allow read: true;
+      allow create: request.auth != null;
+      allow update, delete: false;  // History cannot be modified or deleted
+    }
+  }
+}

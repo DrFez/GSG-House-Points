@@ -1,0 +1,137 @@
+.position-badge {
+  position: absolute;
+  top: -10px;
+  right: 10px;
+  padding: 0.4rem 0.8rem;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+  transform: rotate(5deg);
+  backdrop-filter: blur(5px);
+  transition: transform 0.3s ease;
+}
+
+.first-place {
+  position: relative;
+  animation: spotlight 3s infinite;
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+  }
+}
+
+.house-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.house-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.house-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+  max-width: 1800px;
+  margin: 0 auto;
+  animation: fadeIn 0.6s ease-out;
+}
+
+.house-name {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.points-display {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0.5rem 0;
+  animation: scaleIn 0.5s ease-out;
+}
+
+.points-bar {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  overflow: hidden;
+  margin: 0.5rem 0;
+}
+
+.points-bar-fill {
+  height: 100%;
+  transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.house-emblem {
+  margin-top: 1rem;
+  border-radius: 50%;
+  overflow: hidden;
+  aspect-ratio: 1;
+  width: 60px;
+  height: 60px;
+  transition: transform 0.3s ease;
+}
+
+.house-emblem:hover {
+  transform: scale(1.05);
+}
+
+@keyframes spotlight {
+  0%, 100% { box-shadow: 0 0 30px rgba(255, 215, 0, 0.3); }
+  50% { box-shadow: 0 0 50px rgba(255, 215, 0, 0.5); }
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Specific styles for each position */
+.house-card:nth-child(1) .position-badge {
+  background: linear-gradient(135deg, #ffd700, #ffa500);
+  color: #000;
+  border: 2px solid #FFD700;
+  transform: rotate(-5deg) scale(1.2);
+}
+
+.house-card:nth-child(2) .position-badge {
+  background: linear-gradient(135deg, #e3e3e3, #c0c0c0);
+  color: #000;
+  border: 2px solid #C0C0C0;
+}
+
+.house-card:nth-child(3) .position-badge {
+  background: linear-gradient(135deg, #cd7f32, #a0522d);
+  color: white;
+  border: 2px solid #CD7F32;
+}
+
+.house-card:nth-child(4) .position-badge {
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+  color: white;
+  border: 2px solid #555;
+}
